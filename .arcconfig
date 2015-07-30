@@ -1,0 +1,9 @@
+{
+    "project_id": "smashpatriarchy",
+    "conduit_uri": "https://phabricator.khanacademy.org/",
+    "lint.engine": "ArcanistConfigurationDrivenLintEngine",
+    "load": [
+        ".arcanist_extension/WebappUnitTestEngine"
+    ],
+    "unit.engine": "WebappUnitTestEngine"
+}
