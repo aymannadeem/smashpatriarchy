@@ -1,4 +1,6 @@
 let React = require("react");
+let classNames = require('classnames');
+
 let styles = require("./styles.js");
 
 let InfoSection = React.createClass({
@@ -27,37 +29,37 @@ let InfoSection = React.createClass({
             width: "100%",
             height: 300,
             backgroundColor: "white",
-            border: "solid 1px black"
+            border: "solid 1px gray"
         };
         
-        let womanAtAgeX = {
+        let imageStyle = {
             width: 200,
             height: 300,
-            backgroundColor: "white",
-            border: "solid 1px black",
-            margin: "auto"
+            border: "solid 1px gray",
+            margin: "auto",
+            display: "block",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundImage: `url('${this.props.image}');`
         };
 
+        let buttonClass = classNames({
+            "btn": true,
+            "btn-default": true,
+            "page-scroll": true
+        });
+        
         return <section style={style} id={this.props.id}>
             <div className={"container"}>
                 <div className={"row"}>
                     <div className={"col-xs-4"}>
-                        <div className={"woman-at-age-x"} style={womanAtAgeX} />
+                        <div className={"woman-at-age-x"} style={imageStyle} />
                         <div style={{textAlign:"center", fontSize:30}}>
                             Age<br />X
                         </div>
-                        <div>
-                            FACTOR THAT DISCOURAGES STEM: TEXT TEXT TEXT TEXT TEXT 
-                            TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
-                            TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
-                            TEXT TEXT TEXT TEXT TEXT
-                        </div>
-                        <div>
-                            FACTOR THAT DISCOURAGES STEM: TEXT TEXT TEXT TEXT TEXT
-                            TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-                            TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-                            TEXT TEXT TEXT TEXT TEXT
-                        </div>
+                        <div>{this.props.discourageText}</div>
+                        <div>{this.props.fightText}</div>
                     </div>
                     <div className={"col-xs-8"}>
                         <div style={{ margin: 50, height: 150 }}>
@@ -68,7 +70,7 @@ let InfoSection = React.createClass({
                     </div>
                 </div>
                 <div className={"row"} style={{textAlign:"center",marginTop:25}}>
-                    {this.props.children}
+                    <a className={buttonClass} href={this.props.nextHref}>Next</a>
                 </div>
             </div>
         </section>
