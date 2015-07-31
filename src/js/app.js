@@ -29,6 +29,21 @@ let App = React.createClass({
             "page-scroll": true
         });
         
+        let questions = [
+            {
+                image: "http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg",
+                discourageText: "Factors that discourage: TEXT TEXT TEXT TEXT",
+                fightText: "How to fight it: TEXT TEXT TEXT TEXT",
+                nextHref: "#question-2"
+            },
+            {
+                image: "http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg",
+                discourageText: "Factors that discourage: TEXT TEXT TEXT TEXT",
+                fightText: "How to fight it: TEXT TEXT TEXT TEXT",
+                nextHref: "#info-3"
+            }
+        ];
+        
         return <div style={style}>
             <InfoSection id={"info-1"}>
                 <a className={buttonClass} href="#info-2">Click Me to Scroll Down!</a>
@@ -36,12 +51,8 @@ let App = React.createClass({
             <InfoSection id={"info-2"}>
                 <a className={buttonClass} href="#question-1">Click Me to Scroll Down!</a>
             </InfoSection>
-            <QuestionSection id={"question-1"}>
-                <a className={buttonClass} href="#question-2">Click Me to Scroll Down!</a>
-            </QuestionSection>
-            <QuestionSection id={"question-2"}>
-                <a className={buttonClass} href="#info-3">Click Me to Scroll Down!</a>
-            </QuestionSection>
+            <QuestionSection id={"question-1"} {...questions[0]} />
+            <QuestionSection id={"question-2"} {...questions[1]} />
             <InfoSection id={"info-3"}>
                 <a className={buttonClass} href="#info-4">Click Me to Scroll Down!</a>
             </InfoSection>
