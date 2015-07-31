@@ -1,6 +1,6 @@
 module.exports = {
     section: {
         height: "100%",
-        paddingTop: 150
+        paddingTop: 125
     }
 };
