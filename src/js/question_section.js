@@ -49,7 +49,7 @@ let QuestionSection = React.createClass({
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
-            backgroundImage: "url('http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg');"
+            backgroundImage: `url('${this.props.image}');`
         };
 
         let ageStyle = { 
@@ -69,15 +69,15 @@ let QuestionSection = React.createClass({
                 <div style={leftColStyle}>
                     <div style={imgStyle}></div>
                     <div style={ageStyle}>Age<br />5</div>
-                        <h3>Factors that Discourage STEM</h3>
+                        <h3>FACTORS DISCOURAGING STEM:</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar aliquam leo non eleifend. Pellentesque viverra suscipit purus rutrum porta.
+                            {this.props.discourageText}
                         </p>
-                        <h3>How to Fight the Above Factor</h3>
+                        <h3>HOW TO SMASH THE PATRIARCHY:</h3>
                         <p>
-                            Sed euismod condimentum nisl non tincidunt. Sed egestas sapien vitae rhoncus molestie. Sed id fermentum arcu. Nullam consequat quam eget lectus fringilla, non vulputate erat gravida.
+                            {this.props.fightText}
                         </p>
-                        <a className={buttonClass} href={this.props.nextHref}>Click Me to Scroll Down!</a>
+                        <a className={buttonClass} href={this.props.nextHref}>next!</a>
                     </div>
                     <div style={rightColStyle}>
                         <h1>TITLE</h1>
