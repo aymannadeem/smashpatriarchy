@@ -1,4 +1,4 @@
-# Smashing the Patriarchy
+# smashing the patriarchy with math.
 
 Research backed social activism.
 
