@@ -43,15 +43,15 @@ let App = React.createClass({
         }
 
         let graph1 = <BarGraph
-            width={600}
-            height={400}
+            width={800}
+            height={600}
             color={'rgb(0,128,255)'}
             dataset={dataset1}
             />;
         
         let graph2 = <BarGraph
-            width={600}
-            height={400}
+            width={800}
+            height={600}
             color={'rgb(255,128,0)'}
             dataset={dataset2}
             />;

@@ -12,13 +12,9 @@ var Chart = React.createClass({
         let el = this.getDOMNode();
         
         let svg = d3.select(el)
-            .append("div")
-            .classed("svg-container", true) //container class to make it responsive
             .append("svg")
-            .attr("preserveAspectRatio", "xMinYMin meet")
-            .attr("viewBox", `0 0 ${width} ${height}`)
-            //class to make it responsive
-            .classed("svg-content-responsive", true);
+            .attr("width", width)
+            .attr("height", height);
 
         let rects = svg.selectAll("rect")
             .data(dataset)
@@ -48,7 +44,13 @@ var Chart = React.createClass({
     },
 
     render: function() {
-        return <div className="Chart"></div>;
+
+        let bottomStyle = {
+            position: 'absolute',
+            bottom: 0
+        };
+
+        return <div className="Chart" style={bottomStyle}></div>;
     }
 });
 
