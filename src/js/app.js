@@ -59,11 +59,24 @@ let App = React.createClass({
         let questions = [
             {
                 image: "http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg",
+                discourageText: "In the US, there is a 1:1 ratio of male to female babies that are born each year, yet men outnumber women 3:1 in STEM fields. ",
+                fightText: "There are many factors that predispose women to pursue fields outside of STEM. Being aware of these factors can help us develop a better understanding of why this gap exists, and productively address issues that discourage women. ",
+                nextHref: "Research shows that intelligence differences between sexes are negligible. Nobody is born smart - we all start at 0."
+                nextHref: "#question-2",
+                dataviz: graph1
+            },
+            
+            {
+                image: "http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg",
                 discourageText: "Factors that discourage: TEXT TEXT TEXT TEXT",
                 fightText: "How to fight it: TEXT TEXT TEXT TEXT",
                 nextHref: "#question-2",
                 dataviz: graph1
             },
+
+                
+            }
+
             {
                 image: "http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg",
                 discourageText: "Factors that discourage: TEXT TEXT TEXT TEXT",
