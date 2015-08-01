@@ -57,6 +57,12 @@ let QuestionSection = React.createClass({
             fontSize: '30',
             fontWeight: 'bold'
         };
+
+        let buttonClass = classNames({
+            "btn": true,
+            "btn-default": true,
+            "page-scroll": true
+        });
         
         return <div style={sectionStyle} id={this.props.id}>
             <div style={containerStyle}>
@@ -71,6 +77,7 @@ let QuestionSection = React.createClass({
                         <p>
                             Sed euismod condimentum nisl non tincidunt. Sed egestas sapien vitae rhoncus molestie. Sed id fermentum arcu. Nullam consequat quam eget lectus fringilla, non vulputate erat gravida.
                         </p>
+                        <a className={buttonClass} href={this.props.nextHref}>Click Me to Scroll Down!</a>
                     </div>
                     <div style={rightColStyle}>
                         <h1>TITLE</h1>

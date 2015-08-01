@@ -1,5 +1,4 @@
 let React = require("react");
-let classNames = require("classnames");
 
 let InfoSection = require("./info_section.js");
 let QuestionSection = require("./question_section.js");
@@ -23,12 +22,6 @@ let App = React.createClass({
         let style = {
             height: "100%"
         };
-        
-        let buttonClass = classNames({
-            "btn": true,
-            "btn-default": true,
-            "page-scroll": true
-        });
 
         let dataset1 = [];
         for (let i = 0; i < 4; i++) {
@@ -83,20 +76,12 @@ let App = React.createClass({
         ];
         
         return <div style={style}>
-            <InfoSection id={"info-1"}>
-                <a className={buttonClass} href="#info-2">Click Me to Scroll Down!</a>
-            </InfoSection>
-            <InfoSection id={"info-2"}>
-                <a className={buttonClass} href="#question-1">Click Me to Scroll Down!</a>
-            </InfoSection>
+            <InfoSection id={"info-1"} nextHref={"#info-2"} />
+            <InfoSection id={"info-2"} nextHref={"#question-1"} />
             <QuestionSection id={"question-1"} {...questions[0]} />
             <QuestionSection id={"question-2"} {...questions[1]} />
-            <InfoSection id={"info-3"}>
-                <a className={buttonClass} href="#info-4">Click Me to Scroll Down!</a>
-            </InfoSection>
-            <InfoSection id={"info-4"}>
-                <a className={buttonClass} href="#info-1">Click Me to Scroll Up to the top!</a>
-            </InfoSection>
+            <InfoSection id={"info-3"} nextHref={"#info-4"} />
+            <InfoSection id={"info-4"} nextHref={"#info-1"} />
         </div>;
     }
 });
