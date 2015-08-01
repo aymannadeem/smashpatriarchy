@@ -25,13 +25,6 @@ let InfoSection = React.createClass({
         let roundA = Object.assign({}, round, { float: 'left' });
         let roundB = Object.assign({}, round, { float: 'right' });
         
-        let dataViz = {
-            width: "100%",
-            height: 300,
-            backgroundColor: "white",
-            border: "solid 1px gray"
-        };
-        
         let imageStyle = {
             width: 200,
             height: 300,
@@ -62,11 +55,11 @@ let InfoSection = React.createClass({
                         <div>{this.props.fightText}</div>
                     </div>
                     <div className={"col-xs-8"}>
-                        <div style={{ margin: 50, height: 150 }}>
+                        <div style={{ marginLeft: 50, marginRight:50, height: 100, zIndex:-1 }}>
                             <div style={roundA}>A</div>
                             <div style={roundB}>B</div>
                         </div>
-                        <div className={"data-viz"} style={dataViz} />
+                        {this.props.dataviz}
                     </div>
                 </div>
                 <div className={"row"} style={{textAlign:"center",marginTop:25}}>

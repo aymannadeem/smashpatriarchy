@@ -1,8 +1,9 @@
 let React = require("react");
-let classNames = require('classnames');
+let classNames = require("classnames");
 
 let InfoSection = require("./info_section.js");
 let QuestionSection = require("./question_section.js");
+let BarGraph = require("./bar_graph.js");
 
 let App = React.createClass({
     componentDidMount() {
@@ -28,19 +29,47 @@ let App = React.createClass({
             "btn-default": true,
             "page-scroll": true
         });
+
+        let dataset1 = [];
+        for (let i = 0; i < 4; i++) {
+            let newNumber = Math.random() * 400;
+            dataset1.push(Math.ceil(newNumber));
+        }
+
+        let dataset2 = [];
+        for (let i = 0; i < 2; i++) {
+            let newNumber = Math.random() * 400;
+            dataset2.push(Math.ceil(newNumber));
+        }
+
+        let graph1 = <BarGraph
+            width={600}
+            height={400}
+            color={'rgb(0,128,255)'}
+            dataset={dataset1}
+            />;
+        
+        let graph2 = <BarGraph
+            width={600}
+            height={400}
+            color={'rgb(255,128,0)'}
+            dataset={dataset2}
+            />;
         
         let questions = [
             {
                 image: "http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg",
                 discourageText: "Factors that discourage: TEXT TEXT TEXT TEXT",
                 fightText: "How to fight it: TEXT TEXT TEXT TEXT",
-                nextHref: "#question-2"
+                nextHref: "#question-2",
+                dataviz: graph1
             },
             {
                 image: "http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg",
                 discourageText: "Factors that discourage: TEXT TEXT TEXT TEXT",
                 fightText: "How to fight it: TEXT TEXT TEXT TEXT",
-                nextHref: "#info-3"
+                nextHref: "#info-3",
+                dataviz: graph2
             }
         ];
         
