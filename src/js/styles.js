@@ -3,5 +3,12 @@ module.exports = {
         height: "100%",
         paddingTop: 125,
         color: "#333"
+    },
+    colors: {
+        darkPurple: "#353359",
+        mediumPurple: "#7A429E",
+        lightPurple: "#9698BC",
+        mediumGreen: "#1D7A4D",
+        lightGreen: "#5BEAAA"
     }
 };

@@ -9,7 +9,7 @@ let QuestionSection = React.createClass({
         let sectionStyle = {
             height: '100%',
             width: '100%',
-            backgroundColor: 'lightyellow',
+            backgroundColor: this.props.color,
             display: 'flex',
             flexDirection: 'column'
         };
@@ -24,7 +24,7 @@ let QuestionSection = React.createClass({
         let leftColStyle = {
             flexGrow: 0,
             flexShrink: 0,
-            width: 350
+            width: 400
         };
 
         let rightColStyle = {

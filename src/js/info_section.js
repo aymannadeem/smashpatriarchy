@@ -6,7 +6,7 @@ let styles = require("./styles.js");
 let InfoSection = React.createClass({
     render() {
         let style = Object.assign({
-            background: "lightblue"
+            backgroundColor: this.props.color,
         }, styles.section);
 
         let buttonClass = classNames({
