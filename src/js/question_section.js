@@ -77,7 +77,7 @@ let QuestionSection = React.createClass({
                         <p>
                             {this.props.fightText}
                         </p>
-                        <a className={buttonClass} href={this.props.nextHref}>next!</a>
+                        <a className={buttonClass} href={this.props.nextHref}>next</a>
                     </div>
                     <div style={rightColStyle}>
                         <h1>TITLE</h1>
