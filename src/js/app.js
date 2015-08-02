@@ -2,6 +2,7 @@ let React = require("react");
 
 let InfoSection = require("./info_section.js");
 let QuestionSection = require("./question_section.js");
+let TwoColumnSection = require("./two_column_section.js");
 let BarGraph = require("./bar_graph.js");
 
 let styles = require("./styles.js");
@@ -52,14 +53,44 @@ let App = React.createClass({
             dataset={dataset2}
             />;
         
+        let imgStyle = {
+            margin: 25
+        };
+        
         let slides = [
             {
                 type: "info",
-                color: styles.colors.lightPurple
+                color: styles.colors.lightPurple,
+                title: "Why are there so few women in STEM occupations?",
+                content: "This interactive infographic is a thought experiment showing how women’s chances of pursuing STEM fields are impacted by various external factors, in addition to what we as a society can do to...",
+                subtitle: "SMASH the PATRIARCHY"
             },
             {
-                type: "info",
-                color: styles.colors.darkPurple
+                type: "two_column",
+                backgroundColor: styles.colors.darkPurple,
+                textColor: styles.colors.lightPurple,
+                leftColumn: <div>
+                    <h1>in a S.T.E.M. occupation,
+                        In the U.S., there is about 1 male born for every 1 female.</h1>
+                    <img src="images/img_baby.svg" />
+                </div>,
+                rightColumn: <div style={{ textAlign: 'center' }}>
+                    <div>
+                        <img style={imgStyle} src="images/img_malesymbol.svg" />
+                        <img style={imgStyle} src="images/img_femalesymbol1.svg" />
+                    </div>
+                    <div>
+                        <img style={imgStyle} src="images/img_malesymbol.svg" />
+                        <img style={imgStyle} src="images/img_femalesymbol1.svg" />
+                    </div>
+                    <div>
+                        <img style={imgStyle} src="images/img_malesymbol.svg" />
+                        <img style={imgStyle} src="images/img_femalesymbol1.svg" />
+                    </div>
+                    <h1>For every 1 woman
+                        there are 3 men.
+                        in a S.T.E.M. occupation,</h1>
+                </div>
             },
             {
                 type: "question",
@@ -101,6 +132,8 @@ let App = React.createClass({
                     return <InfoSection {...slide} />;
                 } else if (slide.type === "question") {
                     return <QuestionSection {...slide} />;
+                } else if (slide.type === "two_column") {
+                    return <TwoColumnSection {...slide} />;
                 }
             })}
         </div>;

@@ -1,7 +1,7 @@
 module.exports = {
     section: {
         height: "100%",
-        paddingTop: 125,
+        paddingTop: 50,
         color: "#333"
     },
     colors: {
