@@ -4,6 +4,9 @@ let InfoSection = require("./info_section.js");
 let QuestionSection = require("./question_section.js");
 let BarGraph = require("./bar_graph.js");
 
+let styles = require("./styles.js");
+
+
 let App = React.createClass({
     componentDidMount() {
         //jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -49,39 +52,57 @@ let App = React.createClass({
             dataset={dataset2}
             />;
         
-        let questions = [
+        let slides = [
             {
+                type: "info",
+                color: styles.colors.lightPurple
+            },
+            {
+                type: "info",
+                color: styles.colors.darkPurple
+            },
+            {
+                type: "question",
                 image: "https://cdn3.iconfinder.com/data/icons/baby-icons/512/Baby_Girl-512.png",
                 discourageText: "In the US, there is a 1:1 ratio of male to female babies that are born each year, yet men outnumber women 3:1 in STEM fields. ",
                 fightText: "There are many factors that predispose women to pursue fields outside of STEM. Being aware of these factors can help us develop a better understanding of why this gap exists, and productively address issues that discourage women. ",
-                nextHref: "Research shows that intelligence differences between sexes are negligible. Nobody is born smart - we all start at 0.",
-                dataviz: graph1
+                dataviz: graph1,
+                color: styles.colors.mediumGreen
             },
-            
             {
+                type: "question",
                 image: "https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/1930484_24722568534_2247_n.jpg?oh=3d108e39cfd2daf6b700f634acaa3435&oe=565BD85F",
                 discourageText: "Studies show that relative to their male counterparts, women perform poorly in spatial cognition, skills largely used in STEM professions. ",
                 fightText: "How to fight it: TEXT TEXT TEXT TEXT",
-                nextHref: "#question-2",
-                dataviz: graph1
+                dataviz: graph1,
+                color: styles.colors.lightGreen
             },
-
             {
+                type: "question",
                 image: "http://www.weirdasianews.com/wp-content/uploads/2009/12/domo_kun.jpg",
                 discourageText: "Factors that discourage: TEXT TEXT TEXT TEXT",
                 fightText: "How to fight it: TEXT TEXT TEXT TEXT",
-                nextHref: "#info-3",
-                dataviz: graph2
+                dataviz: graph2,
+                color: styles.colors.mediumGreen
+            },
+            {
+                type: "info"
+            },
+            {
+                type: "info"
             }
         ];
         
         return <div style={style}>
-            <InfoSection id={"info-1"} nextHref={"#info-2"} />
-            <InfoSection id={"info-2"} nextHref={"#question-1"} />
-            <QuestionSection id={"question-1"} {...questions[0]} />
-            <QuestionSection id={"question-2"} {...questions[1]} />
-            <InfoSection id={"info-3"} nextHref={"#info-4"} />
-            <InfoSection id={"info-4"} nextHref={"#info-1"} />
+            {slides.map((slide, i) => {
+                slide.id = "section-" + i;
+                slide.nextHref = `#section-${(i + 1) % slides.length}`;
+                if (slide.type === "info") {
+                    return <InfoSection {...slide} />;
+                } else if (slide.type === "question") {
+                    return <QuestionSection {...slide} />;
+                }
+            })}
         </div>;
     }
 });
